@@ -114,6 +114,7 @@ void ProtocolEMMarin::decode(
 }
 
 bool ProtocolEMMarin::can_be_decoded(const uint8_t* encoded_data, const uint8_t encoded_data_size) {
+    FURI_LOG_D("EMMARIN","data: %d, size %d",encoded_data,encoded_data_size);
     furi_check(encoded_data_size >= get_encoded_data_size());
     const EMMarinCardData* card_data = reinterpret_cast<const EMMarinCardData*>(encoded_data);
 
